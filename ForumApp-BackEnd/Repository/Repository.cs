@@ -4,13 +4,13 @@ namespace forumAppAPI.Repo
 {
     public class Repository
     {
-        ForumThread[] threads = new ForumThread[] { 
+        List<ForumThread> threads = new() { 
             new ForumThread(1, "first thread", "lorem ipsum"), 
             new ForumThread(2, "second thread","lorem ipsum"), 
             new ForumThread(3, "third thread", "lorem ipsum") 
         };
 
-        ForumPost[] posts = new ForumPost[]
+        List<ForumPost> posts = new ()
         {
             new ForumPost(1, "post 1", 1, "first post", 1),
             new ForumPost(2, "post 2", 2, "first post", 1),
@@ -55,6 +55,8 @@ namespace forumAppAPI.Repo
             bool badWord = post.body.Split(' ').Contains("puta");
 
             if (badWord) return null;
+
+            posts.Add(post);
 
             return post;
         }
