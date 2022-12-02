@@ -8,8 +8,8 @@ namespace forumAppAPI.Services.Posts
 
         public List<ForumPost> GetAllPostsByThreadId(int id);
 
-        public  bool CheckifPostExists(int id);
+        public  bool CheckifPostExists(string title);
 
-        public ForumPost SavePost(string title);
+        public ForumPost SavePost(ForumPost post);
     }
 }
