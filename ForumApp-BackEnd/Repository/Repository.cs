@@ -12,15 +12,15 @@ namespace forumAppAPI.Repo
 
         ForumPost[] posts = new ForumPost[]
         {
-            new ForumPost(1, 1, "first post", 1),
-            new ForumPost(2, 2, "first post", 1),
-            new ForumPost(3, 3, "first post", 1),
-            new ForumPost(4, 1, "first post", 2),
-            new ForumPost(5, 2, "first post", 2),
-            new ForumPost(6, 3, "first post", 2),
-            new ForumPost(7, 1, "first post", 3),
-            new ForumPost(8, 2, "first post", 3),
-            new ForumPost(9, 3, "first post", 3)
+            new ForumPost(1, "post 1", 1, "first post", 1),
+            new ForumPost(2, "post 2", 2, "first post", 1),
+            new ForumPost(3, "post 3", 3, "first post", 1),
+            new ForumPost(4, "post 4", 1, "first post", 2),
+            new ForumPost(5, "post 5", 2, "first post", 2),
+            new ForumPost(6, "post 5", 3, "first post", 2),
+            new ForumPost(7, "post 5", 1, "first post", 3),
+            new ForumPost(8, "post 5", 2, "first post", 3),
+            new ForumPost(9, "post 5", 3, "first post", 3)
 
         };
 
@@ -40,11 +40,11 @@ namespace forumAppAPI.Repo
             return filteredList.ToList();
         }
 
-        public bool CheckifPostExists(int id)
+        public bool CheckifPostExists(string title)
         {
             foreach (ForumPost post in posts)
             {
-                if (post.threadid == id) return true;    
+                if (post.title == title) return true;    
             }
 
             return false;

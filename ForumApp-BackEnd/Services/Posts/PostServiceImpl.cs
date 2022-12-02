@@ -17,9 +17,9 @@ namespace forumAppAPI.Services.Posts
             return repo.GetAllPostsByThreadId(id);
         }
 
-        public bool CheckifPostExists(int id)
+        public bool CheckifPostExists(string title)
         {
-            return repo.CheckifPostExists(id);
+            return repo.CheckifPostExists(title);
         }
 
         public ForumPost SavePost(ForumPost post)

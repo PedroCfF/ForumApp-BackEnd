@@ -33,9 +33,9 @@ namespace forumAppAPI.Controllers
         }
 
         [HttpGet("Posts/chk")]
-        public ActionResult<bool> CheckifPostExists(int id)
+        public ActionResult<bool> CheckifPostExists(string title)
         {
-            return Ok(postService.CheckifPostExists(id));
+            return Ok(postService.CheckifPostExists(title));
         }
 
         [HttpPost("Post")]

@@ -10,6 +10,6 @@ namespace forumAppAPI.Services.Posts
 
         public  bool CheckifPostExists(int id);
 
-        public ForumPost SavePost(ForumPost post);
+        public ForumPost SavePost(string title);
     }
 }
