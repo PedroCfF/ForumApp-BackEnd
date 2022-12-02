@@ -1,6 +1,6 @@
-﻿using forumAppAPI.Models;
+﻿using ForumApp.Models;
 
-namespace forumAppAPI.Services.Threads
+namespace ForumApp.Services.Threads
 {
     public interface ThreadService
     {

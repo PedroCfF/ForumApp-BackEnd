@@ -1,11 +1,11 @@
-﻿using forumAppAPI.Models;
-using forumAppAPI.Repo;
+﻿using ForumApp.Repo;
+using ForumApp.Models;
 
-namespace forumAppAPI.Services.Posts
+namespace ForumApp.Services.Posts
 {
     public class PostServiceImpl : PostService
     {
-        Repository repo = new Repository();
+        ForumRepo repo = new ForumRepo();
 
         public List<ForumPost> GetAllPosts()
         {

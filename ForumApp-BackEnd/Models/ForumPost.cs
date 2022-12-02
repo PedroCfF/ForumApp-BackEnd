@@ -1,4 +1,4 @@
-﻿namespace forumAppAPI.Models
+﻿namespace ForumApp.Models
 {
     public class ForumPost
     {

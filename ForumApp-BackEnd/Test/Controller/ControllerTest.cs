@@ -3,39 +3,69 @@ using Newtonsoft.Json;
 using NUnit.Framework;
 using System.Net;
 using System.Text;
+using ForumApp.Controllers;
+using ForumApp.Models;
 
 namespace ForumApp_BackEnd.Test.Controller
 {
     [TestFixture]
     public class ControllerTest
     {
-        private HttpClient _client;
+        private ApiController controller;
 
         [SetUp]
         public void SetUp()
         {
-            // Create an instance of the HttpClient class
-            _client = new HttpClient();
+            controller = new ApiController();
         }
 
         [Test]
-        public void DoSomething_ShouldReturnOk()
+        public void checking()
         {
-            // Arrange
-            var requestBody = new
-            {
-                SomeProperty = "some value"
-            };
-            var content = new StringContent(
-                JsonConvert.SerializeObject(requestBody),
-                Encoding.UTF8,
-                "application/json");
+            int num = 1;
+            Assert.AreEqual(1, num);
+        }
 
-            // Act
-            var response = _client.PostAsync("/api/do-something", content).Result;
+        [Test]
+        public void GetAllThreads_ShouldReturnOk()
+        { 
+            Assert.IsNotNull(controller.GetAllThreads()); 
+            Assert.AreEqual(HttpStatusCode.OK, controller.GetAllThreads().Result);
+            
+        }
 
-            // Assert
-            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+        [Test]
+        public void GetAllPosts_ShouldReturnOk()
+        { 
+            Assert.IsNotNull(controller.GetAllPosts());
+            Assert.AreEqual(HttpStatusCode.OK, controller.GetAllPosts().Result);
+        }
+
+        [Test]
+        public void GetPostsInThread_ShouldReturnOk()
+        {
+            Assert.IsNotNull(controller.GetAllThreads());
+            Assert.AreEqual(HttpStatusCode.OK, controller.GetAllThreads().Result);
+        }
+
+        [Test]
+        public void CheckifPostExists_ShouldReturnTrue()
+        {
+            
+            //Assert.IsTrue(controller.CheckifPostExists("post 1"));
+        }
+
+        [Test]
+        public void SavePost_ShouldReturnNull()
+        {
+            ForumPost post = new ForumPost(25, "post 99", 1, "this is a post with the word palabraCensurada", 2);            
+
+            var content = new StringContent(JsonConvert.SerializeObject(post), Encoding.UTF8, "application/json");
+
+            var response = controller.SavePost(post);
+
+            Assert.IsNull(response);
+            Assert.AreEqual(HttpStatusCode.OK, controller.GetAllThreads().Result);
         }
     }
 }

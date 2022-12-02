@@ -1,6 +1,6 @@
-﻿using forumAppAPI.Models;
+﻿using ForumApp.Models;
 
-namespace forumAppAPI.Services.Posts
+namespace ForumApp.Services.Posts
 {
     public interface PostService
     {   

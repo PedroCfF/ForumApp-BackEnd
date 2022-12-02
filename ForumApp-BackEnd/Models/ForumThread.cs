@@ -1,6 +1,4 @@
-﻿using forumAppAPI.Repo;
-
-namespace forumAppAPI.Models
+﻿namespace ForumApp.Models
 {
     public class ForumThread
     {      

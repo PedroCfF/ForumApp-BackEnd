@@ -1,11 +1,11 @@
-﻿using forumAppAPI.Models;
-using forumAppAPI.Repo;
+﻿using ForumApp.Repo;
+using ForumApp.Models;
 
-namespace forumAppAPI.Services.Threads
+namespace ForumApp.Services.Threads
 {
     public class ThreadServiceImpl : ThreadService
     {
-        Repository repo = new Repository();
+        ForumRepo repo = new ForumRepo();
         public List<ForumThread> GetAllThreads()
         {
             return repo.GetAllThreads();

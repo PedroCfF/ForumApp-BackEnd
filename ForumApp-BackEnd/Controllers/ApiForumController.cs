@@ -1,11 +1,11 @@
-﻿using forumAppAPI.Models;
-using forumAppAPI.Services;
-using forumAppAPI.Services.Posts;
-using forumAppAPI.Services.Threads;
+﻿using ForumApp.Models;
+using ForumApp.Services;
+using ForumApp.Services.Posts;
+using ForumApp.Services.Threads;
 using Microsoft.AspNetCore.Mvc;
 using System.Xml.Linq;
 
-namespace forumAppAPI.Controllers
+namespace ForumApp.Controllers
 {
     [ApiController]
     [Route("/")]
