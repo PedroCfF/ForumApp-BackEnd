@@ -12,7 +12,7 @@ namespace forumAppAPI.Controllers
     public class ApiController : ControllerBase
     { 
         public static ThreadService threadService = new ThreadServiceImpl();
-        public static PostService threadPost = new PostServiceImpl();
+        public static PostService postService = new PostServiceImpl();
 
         [HttpGet("Threads")]
         public ActionResult<List<ForumThread>> GetAllThreads()
@@ -21,21 +21,27 @@ namespace forumAppAPI.Controllers
         }
 
         [HttpGet("Posts")]
-        public ActionResult<List<ForumThread>> GetAllPosts()
+        public ActionResult<List<ForumPost>> GetAllPosts()
         {
-            return Ok(threadPost.GetAllPosts());
+            return Ok(postService.GetAllPosts());
         }
 
         [HttpGet("Posts/{threadId}")]
-        public ActionResult<List<ForumThread>> GetAllPostsByThreadId(int threadId)
+        public ActionResult<List<ForumPost>> GetAllPostsByThreadId(int threadId)
         {
-            return Ok(threadPost.GetAllPostsByThreadId(threadId));
+            return Ok(postService.GetAllPostsByThreadId(threadId));
         }
 
         [HttpGet("Posts/chk")]
         public ActionResult<bool> CheckifPostExists(int id)
         {
-            return Ok(threadPost.CheckifPostExists(id));
+            return Ok(postService.CheckifPostExists(id));
+        }
+
+        [HttpPost("Post")]
+        public ActionResult<ForumPost> SavePost(ForumPost post)
+        {
+            return Ok(postService.SavePost(post));
         }
     }
 }

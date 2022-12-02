@@ -9,5 +9,7 @@ namespace forumAppAPI.Services.Posts
         public List<ForumPost> GetAllPostsByThreadId(int id);
 
         public  bool CheckifPostExists(int id);
+
+        public ForumPost SavePost(ForumPost post);
     }
 }

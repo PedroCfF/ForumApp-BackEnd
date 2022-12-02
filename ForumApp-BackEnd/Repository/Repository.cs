@@ -12,15 +12,15 @@ namespace forumAppAPI.Repo
 
         ForumPost[] posts = new ForumPost[]
         {
-            new ForumPost(1, "sports", "first post", "image.jpg", 1),
-            new ForumPost(2, "sports", "first post", "image.jpg", 1),
-            new ForumPost(3, "sports", "first post", "image.jpg", 1),
-            new ForumPost(4, "sports", "first post", "image.jpg", 2),
-            new ForumPost(5, "sports", "first post", "image.jpg", 2),
-            new ForumPost(6, "sports", "first post", "image.jpg", 2),
-            new ForumPost(7, "sports", "first post", "image.jpg", 3),
-            new ForumPost(8, "sports", "first post", "image.jpg", 3),
-            new ForumPost(9, "sports", "first post", "image.jpg", 3)
+            new ForumPost(1, 1, "first post", 1),
+            new ForumPost(2, 2, "first post", 1),
+            new ForumPost(3, 3, "first post", 1),
+            new ForumPost(4, 1, "first post", 2),
+            new ForumPost(5, 2, "first post", 2),
+            new ForumPost(6, 3, "first post", 2),
+            new ForumPost(7, 1, "first post", 3),
+            new ForumPost(8, 2, "first post", 3),
+            new ForumPost(9, 3, "first post", 3)
 
         };
 
@@ -48,6 +48,15 @@ namespace forumAppAPI.Repo
             }
 
             return false;
+        }
+
+        public ForumPost SavePost(ForumPost post)
+        {
+            bool badWord = post.body.Split(' ').Contains("puta");
+
+            if (badWord) return null;
+
+            return post;
         }
 
 

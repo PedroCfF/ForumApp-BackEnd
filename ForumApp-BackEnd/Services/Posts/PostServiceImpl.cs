@@ -7,18 +7,24 @@ namespace forumAppAPI.Services.Posts
     {
         Repository repo = new Repository();
 
-        public bool CheckifPostExists(int id)
-        {
-            return repo.CheckifPostExists(id);  
-        }
-
         public List<ForumPost> GetAllPosts()
         {
             return repo.GetAllPosts();
         }
+
         public List<ForumPost> GetAllPostsByThreadId(int id)
         {
             return repo.GetAllPostsByThreadId(id);
+        }
+
+        public bool CheckifPostExists(int id)
+        {
+            return repo.CheckifPostExists(id);
+        }
+
+        public ForumPost SavePost(ForumPost post)
+        {
+            return repo.SavePost(post);
         }
     }
 }
